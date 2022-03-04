@@ -1,6 +1,7 @@
 import requests
-import urllib
+import urllib.parse
 from bs4 import BeautifulSoup
+
 
 
 
@@ -53,14 +54,15 @@ def single_scrap(url, page, proxie):
         y = x['href']
         if y.startswith("/url?q="):
             gg = y.replace("/url?q=", "")
-            hr = gg.split("aspx")
-            hk = hr[0]+"aspx"
+            hr = gg.split("&sa=")
+            hk = hr[0]
             gf = hk.split("//")[1]
             k = gf.split("/")[0]
             if k in blacklist:
                 pass
             else:
-                print(hk)
+                enc = urllib.parse.unquote(hk)
+                print(enc)
 
 page = 0
 
