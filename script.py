@@ -29,7 +29,6 @@ blacklist = ['support.google.com', 'accounts.google.com']
 
 print(banner)
 dorks = input("Enter Your dork: ")
-# enc = urllib.parse.urlencode(dorks)
 page_num = input(" Enter Page Number: ")
 int_page_num = int(page_num)
 mainurl = f"https://www.google.com/search?q={dorks}&start="
