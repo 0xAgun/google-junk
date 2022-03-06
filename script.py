@@ -63,6 +63,9 @@ def single_scrap(url, page, proxie):
                 else:
                     enc = urllib.parse.unquote(hk)
                     print(enc)
+                    out = open("output.txt", "a")
+                    out.write(enc+"\n")
+                    out.close()
     except Exception:
         pass
         
